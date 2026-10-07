@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nikhil Dubey | Product Portfolio</title>
+<meta name="description" content="Nikhil Dubey, Senior Product Analyst building 0-to-1 AI products in HealthTech. Case studies and live demos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<!--
+  BEFORE PUBLISHING: search this file for "YOUR-" and replace each with your real link.
+  If a demo is hosted on Render, add this inside its .actions div:
+  <span class="hint">Free server, first load can take up to a minute</span>
+-->
+<style>
+:root{
+  --bg:#FFFFFF; --alt:#F5F7FA; --ink:#13233A; --muted:#5B6878; --line:#E2E7ED;
+  --accent:#0F766E; --accent-ink:#0B5952; --accent-soft:#E7F4F2; --signal:#D97706; --signal-soft:#FDF3E3;
+  --head:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Source Sans 3",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.container{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:700 1.0625rem/1 var(--head);text-decoration:none;letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{text-decoration:none;font-size:.9688rem;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .9688rem/1 var(--body);text-decoration:none;padding:.8rem 1.15rem;border-radius:8px;transition:background .15s,border-color .15s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-ink)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--ink)}
+.nav .btn{padding:.6rem .95rem}
+.nav-links a.btn-primary{color:#fff}
+.nav-right{display:none;align-items:center;gap:.5rem}
+.menu-btn{width:44px;height:44px;display:grid;place-items:center;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);cursor:pointer}
+@media (max-width:760px){
+  .nav-right{display:flex}
+  .nav .cv-mobile{padding:0 1rem;height:44px}
+  .nav-links{position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 16px 32px -16px rgba(19,35,58,.25);padding:.5rem 1.5rem 1rem;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.95rem 0;font-size:1.0625rem;color:var(--ink);border-bottom:1px solid var(--line)}
+  .nav-links a.btn{display:none}
+}
+
+/* Hero */
+.hero{padding:5.5rem 0 3.5rem}
+.hero .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.9375rem;font-weight:600;color:var(--accent-ink);background:var(--accent-soft);padding:.35rem .75rem;border-radius:999px}
+.hero .kicker .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--accent)}
+.hero h1{font:800 clamp(2.5rem,5.4vw,4.25rem)/1.04 var(--head);letter-spacing:-.035em;margin-top:1.5rem;max-width:14ch}
+.hero .lede{font-size:1.25rem;color:var(--muted);margin-top:1.5rem;max-width:40rem;line-height:1.55}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:4rem;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.proof div{padding:1.4rem 1.5rem;border-left:1px solid var(--line)}
+.proof div:first-child{border-left:0}
+.proof b{display:block;font:800 2rem/1.1 var(--head);letter-spacing:-.03em}
+.proof span{display:block;margin-top:.35rem;color:var(--muted);font-size:.9375rem;line-height:1.4}
+@media (max-width:520px){.proof b{font-size:1.5rem}.hero{padding:3.5rem 0 2.5rem}.proof div{padding:1.1rem}}
+@media (max-width:820px){.proof{grid-template-columns:repeat(2,1fr)}.proof div:nth-child(3){border-left:0}.proof div:nth-child(n+3){border-top:1px solid var(--line)}}
+.worked{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 2rem;margin-top:2rem;color:var(--muted);font-size:.9375rem}
+.worked strong{font:700 1rem var(--head);color:var(--ink);opacity:.75}
+
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center}
+.collage{position:relative;height:26rem}
+.collage .mock{position:absolute;padding:1rem 1.1rem;font-size:.8125rem}
+.c-title{font:700 .875rem var(--head)}
+.collage .c-report{width:15rem;left:4%;top:0}
+.collage .c-lab{width:14.5rem;right:0;top:38%}
+.c-lab .tr{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-top:1px solid var(--line);margin-top:.35rem}
+.collage .c-book{width:11rem;left:12%;bottom:0}
+.mini{display:flex;gap:1rem;align-items:flex-end;margin-top:.6rem;height:5.6rem}
+.mini div{text-align:center;width:2.6rem}
+.mini b{display:block;font:800 .875rem var(--head);margin-bottom:.25rem}
+.mini i{display:block;border-radius:6px 6px 0 0;background:#D8DEE6}
+.mini .on i{background:var(--accent)}.mini .on b{color:var(--accent-ink)}
+@media (max-width:960px){.hero-grid{grid-template-columns:1fr}.collage{display:none}}
+
+/* Sections */
+section{padding:5rem 0}
+section.alt{background:var(--alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:40rem;margin-bottom:3rem}
+.sec-head h2{font:800 clamp(1.875rem,3.6vw,2.5rem)/1.12 var(--head);letter-spacing:-.025em}
+.sec-head p{color:var(--muted);margin-top:.75rem;font-size:1.125rem}
+
+.mock{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px -12px rgba(19,35,58,.18);width:100%}
+
+/* Shared mini-UI bits (hero collage + project cards) */
+.score{display:flex;align-items:center;gap:.9rem;margin:1rem 0 .9rem}
+.score .num{font:800 1.6rem/1 var(--head)}
+.score small{display:block;font-size:.75rem;color:var(--muted)}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:.8125rem;padding:.45rem 0;border-top:1px solid var(--line)}
+.pill{font-size:.6875rem;font-weight:700;padding:.15rem .5rem;border-radius:999px}
+.low{background:#E7F4F2;color:#0B5952}.mid{background:#FDF3E3;color:#8A4B06}
+.tick{width:1rem;height:1rem;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center}
+
+/* Project carousel (port of the OfferCarousel component) */
+.pc{position:relative}
+.pc-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding:.75rem 0 1.25rem;margin-top:-.75rem}
+.pc-track::-webkit-scrollbar{display:none}
+.pc-card{position:relative;flex:0 0 300px;min-height:440px;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;scroll-snap-align:start;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.pc-card:hover,.pc-card:focus-visible{transform:translateY(-8px);box-shadow:0 20px 40px -20px rgba(19,35,58,.35)}
+.pc-media{position:relative;height:190px;flex-shrink:0;overflow:hidden;background:linear-gradient(160deg,#EAF4F3 0%,#F2F5F9 100%)}
+.pc-art{position:absolute;inset:0;display:grid;place-items:center;transition:transform .5s ease}
+.pc-card:hover .pc-art,.pc-card:focus-visible .pc-art{transform:scale(1.1)}
+.pc-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:1.1rem 1.25rem 1.1rem}
+.pc-tag{display:flex;align-items:center;gap:.45rem;font-size:.8125rem;color:var(--muted)}
+.pc-tag svg{color:var(--accent);flex-shrink:0}
+.pc-body h3{font:800 1.2rem/1.25 var(--head);letter-spacing:-.015em;margin-top:.45rem}
+.pc-body p{font-size:.9375rem;line-height:1.45;color:var(--muted);margin-top:.4rem}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding-top:.85rem;margin-top:.85rem;border-top:1px solid var(--line)}
+.pc-brand{display:flex;align-items:center;gap:.65rem;min-width:0}
+.pc-logo{width:2.1rem;height:2.1rem;border-radius:50%;flex-shrink:0;background:var(--alt);border:1px solid var(--line);display:grid;place-items:center;font:800 .5625rem/1 var(--head);letter-spacing:-.01em;color:var(--ink)}
+.pc-brand b{display:block;font-size:.8125rem;font-weight:600;line-height:1.3}
+.pc-brand div span{display:block;font-size:.8125rem;font-weight:600;line-height:1.3;color:var(--accent-ink)}
+.pc-go{width:2.1rem;height:2.1rem;border-radius:50%;flex-shrink:0;background:var(--alt);color:var(--ink);display:grid;place-items:center;transition:transform .3s,background .3s,color .3s}
+.pc-card:hover .pc-go,.pc-card:focus-visible .pc-go{transform:rotate(-45deg);background:var(--accent);color:#fff}
+.pc-btn{position:absolute;top:50%;z-index:2;width:2.75rem;height:2.75rem;margin-top:-1.375rem;border-radius:50%;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:0;box-shadow:0 8px 20px -10px rgba(19,35,58,.35);transition:opacity .3s,background .2s}
+.pc-btn.prev{left:-1.375rem}.pc-btn.next{right:-1.375rem}
+.pc:hover .pc-btn,.pc:focus-within .pc-btn{opacity:1}
+.pc-btn:hover{background:#fff}
+.pc-btn:disabled{opacity:0!important;pointer-events:none}
+@media (hover:none){.pc-btn{display:none}}
+@media (prefers-reduced-motion:reduce){.pc-track{scroll-behavior:auto}.pc-card,.pc-art,.pc-go{transition:none}}
+
+/* Card artwork */
+.art{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px -12px rgba(19,35,58,.22);padding:.8rem .9rem;width:12.5rem;font-size:.75rem}
+.art .t{font:700 .8125rem var(--head)}
+.art .score{margin:.5rem 0 .35rem;gap:.6rem}
+.art .score .num{font-size:1.1rem}
+.art .row{font-size:.75rem;padding:.32rem 0}
+.art-bars{display:flex;align-items:flex-end;gap:.4rem;height:4.5rem;margin-top:.6rem;padding-top:.4rem;border-top:1px solid var(--line)}
+.art-bars i{flex:1;border-radius:4px 4px 1px 1px;background:#C9E6E2}
+.art-bars i.hi{background:var(--accent)}
+.art-flow{display:flex;align-items:center;gap:.6rem}
+.art-pdf{width:3.6rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.5rem;box-shadow:0 8px 18px -12px rgba(19,35,58,.3)}
+.art-pdf em{font:700 .55rem var(--head);font-style:normal;color:#B42318;background:#FEECEB;padding:.05rem .3rem;border-radius:3px}
+.art-pdf i{display:block;height:.28rem;background:#E3E8EE;border-radius:2px;margin-top:.32rem}
+.art-pdf i:nth-child(odd){width:70%}
+.art-arrow{width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex-shrink:0}
+.art-flow .art{width:9.5rem;padding:.6rem .7rem}
+.art-flow .row{font-size:.7rem;padding:.28rem 0}
+.art-ab{display:flex;align-items:flex-end;gap:1.4rem;height:5rem;justify-content:center;border-bottom:1.5px solid var(--line);margin-top:.4rem}
+.art-ab div{width:2.6rem;text-align:center}
+.art-ab b{display:block;font:800 .9rem var(--head);margin-bottom:.25rem}
+.art-ab i{display:block;border-radius:5px 5px 0 0;background:#D8DEE6}
+.art-ab .on b{color:var(--accent-ink)}.art-ab .on i{background:var(--accent)}
+.art-lbl{display:flex;justify-content:center;gap:1.4rem;margin-top:.3rem}
+.art-lbl span{width:2.6rem;text-align:center;font-size:.6875rem;color:var(--muted)}
+.art-icon{width:5.5rem;height:5.5rem;border-radius:24px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--accent);box-shadow:0 12px 28px -14px rgba(19,35,58,.3)}
+.art-live{position:absolute;top:1rem;right:1rem;display:inline-flex;align-items:center;gap:.4rem;font:700 .75rem var(--head);color:var(--accent-ink);background:#fff;border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px}
+.art-live .dot{width:.45rem;height:.45rem;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
+
+/* Cards row */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+.card .big{font:800 1.75rem/1.1 var(--head);letter-spacing:-.02em;color:var(--accent-ink)}
+.card h3{font:700 1.125rem/1.3 var(--head);margin-top:.6rem}
+.card p{color:var(--muted);margin-top:.4rem;font-size:1rem}
+.card .btn{margin-top:1rem}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.live{display:inline-flex;align-items:center;gap:.45rem;font:700 .8125rem var(--head);color:var(--accent-ink);background:var(--accent-soft);padding:.3rem .7rem;border-radius:999px}
+.live .dot{width:.5rem;height:.5rem;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
+.card .live+h3{margin-top:.9rem}
+.feature{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.75rem;margin-bottom:1.25rem}
+.feature .status{font:700 .8125rem var(--head);color:#8A4B06;background:var(--signal-soft);padding:.3rem .65rem;border-radius:999px;white-space:nowrap}
+.feature h3{font:800 1.375rem/1.25 var(--head);letter-spacing:-.015em}
+.feature p{color:var(--muted);margin-top:.5rem;max-width:46rem}
+@media (max-width:640px){.feature{grid-template-columns:1fr;gap:.9rem}.feature .status{justify-self:start}}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;counter-reset:s}
+.step{border-top:3px solid var(--accent);padding-top:1.1rem}
+.step::before{counter-increment:s;content:counter(s);font:800 .875rem var(--head);color:var(--accent-ink)}
+.step h3{font:700 1.125rem/1.3 var(--head);margin-top:.35rem}
+.step p{color:var(--muted);margin-top:.35rem;font-size:1rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* Experience */
+.xp{display:grid;grid-template-columns:13rem 1fr;gap:1.5rem;padding:1.75rem 0;border-top:1px solid var(--line)}
+.xp:last-child{border-bottom:1px solid var(--line)}
+.xp .when{color:var(--muted);font-size:.9688rem}
+.xp h3{font:700 1.1875rem/1.3 var(--head)}
+.xp .role{color:var(--muted);font-weight:500}
+.xp ul{margin-top:.6rem;padding-left:1.1rem}
+.xp li{margin-top:.3rem}
+@media (max-width:700px){.xp{grid-template-columns:1fr;gap:.4rem}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem}
+.about p+p{margin-top:1rem}
+.facts{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+.facts div{padding:.8rem 0;border-top:1px solid var(--line)}
+.facts div:first-child{border-top:0;padding-top:0}
+.facts b{display:block;font:700 1rem var(--head)}
+.facts span{color:var(--muted);font-size:.9688rem}
+@media (max-width:900px){.about{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:#fff;padding:2.5rem 0 2rem}
+.contact h2{font:800 clamp(2rem,4.5vw,3.25rem)/1.08 var(--head);letter-spacing:-.03em;max-width:18ch}
+.contact p{color:#B8C2CF;margin-top:1rem;font-size:1.125rem;max-width:36rem}
+.contact .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:0}
+.contact .btn-primary{background:#fff;color:var(--ink)}
+.contact .btn-primary:hover{background:#E7F4F2}
+.contact .btn-ghost{background:transparent;color:#fff;border-color:#3A4B63}
+.contact .btn-ghost:hover{border-color:#fff}
+footer{background:var(--ink);color:#8C99AA;font-size:.875rem;padding:0 0 2rem}
+footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width:640px){
+  .container{padding:0 1.25rem}
+  section{padding:3.5rem 0}
+  .sec-head{margin-bottom:1.75rem}
+  .sec-head p{font-size:1.0625rem}
+  .hero{padding:2.5rem 0 2.5rem}
+  .hero .kicker{font-size:.8125rem;padding:.35rem .7rem}
+  .hero h1{font-size:clamp(2.25rem,10.5vw,2.85rem);margin-top:1.1rem;max-width:none}
+  .hero .lede{font-size:1.125rem;margin-top:1.1rem}
+  .hero .cta{margin-top:1.5rem}
+  .hero .cta .btn{flex:1;justify-content:center;min-height:48px}
+  .proof{margin-top:2.25rem}
+  .proof b{font-size:1.4rem;white-space:nowrap}
+  .proof div{padding:1rem}
+  .proof span{font-size:.875rem}
+
+  /* project carousel: full-bleed swipe with the next card peeking in */
+  .pc-track{margin:-.75rem -1.25rem 0;padding:.75rem 1.25rem 1.25rem;scroll-padding:0 1.25rem;gap:1rem}
+  .pc-card{flex-basis:min(300px,80vw);min-height:420px}
+
+  .feature{padding:1.25rem}
+  .feature h3{font-size:1.2rem}
+  .card{padding:1.25rem}
+  .card .btn{width:100%;justify-content:center;min-height:48px}
+  .xp{padding:1.25rem 0}
+  .about{gap:2rem}
+  .contact{padding:2rem 0 1.5rem}
+  .contact .cta{flex-direction:column}
+  .contact .btn{justify-content:center;min-height:48px}
+  footer .container{flex-direction:column}
+}
+@media (max-width:360px){
+  .proof{grid-template-columns:1fr}
+  .proof div{border-left:0!important;border-top:1px solid var(--line)}
+  .proof div:first-child{border-top:0}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-text>*,.collage .mock,.proof{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+  .hero-text>*:nth-child(2){animation-delay:.06s}
+  .hero-text>*:nth-child(3){animation-delay:.12s}
+  .hero-text>*:nth-child(4){animation-delay:.18s}
+  .c-report{animation-delay:.2s!important}.c-lab{animation-delay:.32s!important}.c-book{animation-delay:.44s!important}
+  .proof{animation-delay:.3s}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="#top">Nikhil Dubey</a>
+    <div class="nav-right">
+    <a class="btn btn-primary cv-mobile" href="Nikhil_Dubey_CV.pdf">CV</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg>
+    </button>
+    </div>
+    <nav class="nav-links" id="main-nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#process">How I work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a class="btn btn-primary" href="Nikhil_Dubey_CV.pdf">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+      <div class="hero-text">
+      <span class="kicker"><span class="dot"></span>Senior Product Analyst at HCL Healthcare, open to PM roles</span>
+      <h1>I build AI health products people actually use.</h1>
+      <p class="lede">4.5 years taking products from 0 to 1 in <strong>HealthTech, InsurTech and B2B SaaS</strong>. I do the discovery, write the PRD, and often build the first working version myself with Claude Code. MBA, IIT Kanpur.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#work">See my work</a>
+      </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="mock c-report">
+          <div class="c-title">Smart Report</div>
+          <div class="score" style="margin:.6rem 0 .5rem">
+            <svg width="52" height="52" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#E7F4F2" stroke-width="8"/><circle cx="32" cy="32" r="26" fill="none" stroke="#0F766E" stroke-width="8" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40" transform="rotate(-90 32 32)"/></svg>
+            <div><small>Health Score</small><div class="num" style="font-size:1.3rem">Good</div></div>
+          </div>
+          <div class="row"><span>Biological Age</span><span class="pill low">Younger</span></div>
+          <div class="row"><span>Diabetes risk</span><span class="pill mid">Watch</span></div>
+        </div>
+        <div class="mock c-lab">
+          <div class="c-title">Lab report, digitised</div>
+          <div class="tr"><span>HbA1c</span><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div>
+          <div class="tr"><span>LDL cholesterol</span><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div>
+          <div class="tr"><span>Vitamin D</span><span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div>
+        </div>
+        <div class="mock c-book">
+          <div class="c-title">Benefit bookings</div>
+          <div class="mini"><div><b>21%</b><i style="height:2.3rem"></i></div><div class="on"><b>37%</b><i style="height:4rem"></i></div></div>
+        </div>
+      </div>
+      </div>
+      <div class="proof" role="list">
+        <div role="listitem"><b>₹10 Cr</b><span>revenue unlocked by AI Smart Reports</span></div>
+        <div role="listitem"><b>150K+</b><span>users on Smart Reports, 81% open theirs</span></div>
+        <div role="listitem"><b>98.95%</b><span>accuracy reading reports from 55+ labs</span></div>
+        <div role="listitem"><b>21% → 37%</b><span>benefit booking rate in 3 months</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="alt">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Selected work</h2>
+        <p>Products I've shipped. Open any card to try the live product.</p>
+      </div>
+      <div class="pc" role="region" aria-label="Projects">
+        <button class="pc-btn prev" aria-label="Scroll left" disabled><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <div class="pc-track">
+        <a class="pc-card" href="https://smart-reports-clone.vercel.app" target="_blank" rel="noopener" aria-label="AI Smart Reports for users: open live demo">
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art"><div class="t">Your Smart Report</div><div class="score"><svg width="40" height="40" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#E7F4F2" stroke-width="9"/><circle cx="32" cy="32" r="26" fill="none" stroke="#0F766E" stroke-width="9" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40" transform="rotate(-90 32 32)"/></svg><div><small>Health Score</small><div class="num">Good</div></div></div><div class="row"><span>Biological Age</span><span class="pill low">Younger</span></div><div class="row"><span>Diabetes risk</span><span class="pill mid">Watch</span></div></div></div></div>
+          <div class="pc-body">
+            <div>
+              <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>AI product, built 0 to 1</span></div>
+              <h3>Making lab reports people actually read</h3>
+              <p>Risk prediction, Health Score and Biological Age. 81% of users open their report.</p>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-brand"><span class="pc-logo" aria-hidden="true">HCL</span><div><b>HCL Healthcare</b><span>150K+ users</span></div></div>
+              <span class="pc-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+        <a class="pc-card" href="https://corporate-dashboard-clone.vercel.app" target="_blank" rel="noopener" aria-label="AI Smart Reports for corporates: open live demo">
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art"><div class="t">Workforce health overview</div><div class="art-bars"><i style="height:45%"></i><i style="height:72%"></i><i class="hi" style="height:95%"></i><i style="height:58%"></i><i style="height:38%"></i><i style="height:66%"></i></div></div></div></div>
+          <div class="pc-body">
+            <div>
+              <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>B2B</span></div>
+              <h3>Turning a health report into a sales advantage</h3>
+              <p>The corporate version of Smart Reports. 4 new clients won and 3 renewed.</p>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-brand"><span class="pc-logo" aria-hidden="true">HCL</span><div><b>HCL Healthcare</b><span>₹10 Cr revenue</span></div></div>
+              <span class="pc-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+        <a class="pc-card" href="YOUR-DIGITISATION-LINK" target="_blank" rel="noopener" aria-label="Lab report digitisation platform: open live demo">
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art-flow"><div class="art-pdf"><em>PDF</em><i></i><i></i><i></i><i></i><i></i></div><div class="art-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="art"><div class="row" style="border-top:0"><span>HbA1c</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div><div class="row"><span>LDL</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div><div class="row"><span>Vitamin D</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div></div></div></div></div>
+          <div class="pc-body">
+            <div>
+              <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>AI, vision-language model</span></div>
+              <h3>Reading 55+ lab formats without 55 integrations</h3>
+              <p>Built end to end with Claude Code in 7 months. Processes 500+ reports a day.</p>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-brand"><span class="pc-logo" aria-hidden="true">HCL</span><div><b>HCL Healthcare</b><span>98.95% accuracy</span></div></div>
+              <span class="pc-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+        <a class="pc-card" href="https://my-benefits.vercel.app/" target="_blank" rel="noopener" aria-label="Benefits Hub: open live demo">
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art" style="width:11rem"><div class="t">Benefit booking rate</div><div class="art-ab"><div><b>21%</b><i style="height:1.9rem"></i></div><div class="on"><b>37%</b><i style="height:3.35rem"></i></div></div><div class="art-lbl"><span>Before</span><span>After</span></div></div></div></div>
+          <div class="pc-body">
+            <div>
+              <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>Growth, A/B testing</span></div>
+              <h3>Getting people to use benefits they already had</h3>
+              <p>A redesigned Benefits Hub, A/B tested before rollout.</p>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-brand"><span class="pc-logo" aria-hidden="true">HCL</span><div><b>HCL Healthcare</b><span>21% → 37% bookings</span></div></div>
+              <span class="pc-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+        <a class="pc-card" href="https://gymdemo-beryl-seven.vercel.app/" target="_blank" rel="noopener" aria-label="Gym app: open the app">
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><span class="art-live"><span class="dot"></span>Live</span><div class="art-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></div></div></div>
+          <div class="pc-body">
+            <div>
+              <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>Live in production</span></div>
+              <h3>Gym app</h3>
+              <p>Find partner gyms across India, compare plans and sign up. Built with AI coding tools.</p>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-brand"><span class="pc-logo" aria-hidden="true">AI</span><div><b>Built with AI</b><span>Live now</span></div></div>
+              <span class="pc-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+        </div>
+        <button class="pc-btn next" aria-label="Scroll right"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <h2>More work</h2>
+        <p>What I'm leading now, and other wins.</p>
+      </div>
+
+      <div class="feature">
+        <span class="status">In progress</span>
+        <div>
+          <h3>Forecasting health a year ahead for insurance underwriting</h3>
+          <p>A flagship InsurTech product with a credit bureau and a global insurer: an ML model that forecasts 16 lab markers a year ahead. I own the strategy and roadmap.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="big">+18% DAU</div>
+          <h3>Step Challenge</h3>
+          <p>A gamified challenge built from CleverTap cohort insights. Daily active users rose 18% in 8 weeks.</p>
+        </div>
+        <div class="card">
+          <div class="big">62 labs</div>
+          <h3>Partner lab integrations</h3>
+          <p>Users book tests in-app, track orders live, and get both a PDF and a Smart Report.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="alt">
+    <div class="container">
+      <div class="sec-head">
+        <h2>How I work</h2>
+        <p>The same loop, whether it's a new product or a small feature.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Find the real problem</h3><p>User research, funnels and cohorts in SQL and CleverTap before anything gets built.</p></div>
+        <div class="step"><h3>Write it down</h3><p>A clear PRD and a prioritised roadmap the team can push back on.</p></div>
+        <div class="step"><h3>Build a working version</h3><p>I prototype with Claude Code and ship demos on Vercel, so we test real products, not slides.</p></div>
+        <div class="step"><h3>Test and measure</h3><p>A/B tests and clear success metrics decide what scales.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="sec-head"><h2>Experience</h2></div>
+      <div class="xp">
+        <div class="when">Jun 2024 – Present</div>
+        <div>
+          <h3>HCL Healthcare</h3>
+          <p class="role">Product Analyst, promoted to Senior Product Analyst</p>
+          <ul><li>Built AI Smart Reports and the lab digitisation platform; leading the InsurTech forecasting model.</li><li>Mentor 4 product interns.</li></ul>
+        </div>
+      </div>
+      <div class="xp">
+        <div class="when">May 2023 – Apr 2024</div>
+        <div>
+          <h3>Desynova Digital</h3>
+          <p class="role">Product Intern, B2B media SaaS (during MBA)</p>
+          <ul><li>Cut report generation time 25% with a new Reporting Dashboard for Contido.</li><li>Made data ingestion 2x faster and integrated two MAM platforms alongside EY.</li></ul>
+        </div>
+      </div>
+      <div class="xp">
+        <div class="when">Jun 2020 – Jul 2022</div>
+        <div>
+          <h3>3GeoMETre Innovations</h3>
+          <p class="role">Business Analyst / Product Owner, HR and payroll ERP</p>
+          <ul><li>Grew active users 35% in 6 months by leading the UAE expansion and go-to-market.</li><li>Led a 7-member team shipping UAE HR and payroll features.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="container about">
+      <div>
+        <div class="sec-head" style="margin-bottom:1.5rem"><h2>About</h2></div>
+        <p>I started in civil engineering, moved into product at an HR tech startup, did my MBA at IIT Kanpur, and now build AI products in healthtech.</p>
+        <p>I like being close to the build. I built the lab digitisation platform end to end with Claude Code, and I keep working demos of my products online so people can try them, not just read about them.</p>
+        <p>Off work, I play cricket, go trekking, run, and sketch.</p>
+      </div>
+      <div class="facts">
+        <div><b>MBA, IIT Kanpur</b><span>2022–24, CGPA 8.98. Department Placement Coordinator.</span></div>
+        <div><b>B.Tech Civil Engineering, Nirma University</b><span>2016–20</span></div>
+        <div><b>Runner-up, XLRI ARGO</b><span>Consulting case competition, 1,000+ teams</span></div>
+        <div><b>Tools</b><span>Claude Code, SQL, CleverTap, Figma, JIRA, Postman, Vercel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:nikhil13.dubey@gmail.com">nikhil13.dubey@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/nikhild22">LinkedIn</a>
+        <a class="btn btn-ghost" href="Nikhil_Dubey_CV.pdf">Download CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container"><span>Nikhil Dubey, Noida</span><span>Updated October 2026</span></div></footer>
+<script>
+(function(){
+  var root=document.querySelector('.pc'); if(!root) return;
+  var track=root.querySelector('.pc-track'), prev=root.querySelector('.prev'), next=root.querySelector('.next');
+  function scroll(dir){ track.scrollBy({left:dir*track.clientWidth*0.8}); }
+  function update(){
+    prev.disabled=track.scrollLeft<=4;
+    next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-4;
+  }
+  prev.addEventListener('click',function(){scroll(-1);});
+  next.addEventListener('click',function(){scroll(1);});
+  track.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update); update();
+})();
+</script>
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'), nav=document.getElementById('main-nav'); if(!btn) return;
+  function set(open){ nav.classList.toggle('open',open); btn.setAttribute('aria-expanded',open); btn.setAttribute('aria-label',open?'Close menu':'Open menu'); }
+  btn.addEventListener('click',function(){ set(!nav.classList.contains('open')); });
+  nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
+</body>
+</html>
