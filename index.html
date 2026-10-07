@@ -115,6 +115,8 @@ section.alt{background:var(--alt);border-top:1px solid var(--line);border-bottom
 .pc-media{position:relative;height:190px;flex-shrink:0;overflow:hidden;background:linear-gradient(160deg,#EAF4F3 0%,#F2F5F9 100%)}
 .pc-art{position:absolute;inset:0;display:grid;place-items:center;transition:transform .5s ease}
 .pc-card:hover .pc-art,.pc-card:focus-visible .pc-art{transform:scale(1.1)}
+.pc-shot{display:block;width:calc(100% - 2.5rem);height:auto;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:0 12px 28px -14px rgba(19,35,58,.35)}
+.pc-shot.tall{width:7.5rem;align-self:start;margin-top:1.25rem;border-radius:14px}
 .pc-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:1.1rem 1.25rem 1.1rem}
 .pc-tag{display:flex;align-items:center;gap:.45rem;font-size:.8125rem;color:var(--muted)}
 .pc-tag svg{color:var(--accent);flex-shrink:0}
@@ -136,30 +138,6 @@ section.alt{background:var(--alt);border-top:1px solid var(--line);border-bottom
 @media (prefers-reduced-motion:reduce){.pc-track{scroll-behavior:auto}.pc-card,.pc-art,.pc-go{transition:none}}
 
 /* Card artwork */
-.art{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px -12px rgba(19,35,58,.22);padding:.8rem .9rem;width:12.5rem;font-size:.75rem}
-.art .t{font:700 .8125rem var(--head)}
-.art .score{margin:.5rem 0 .35rem;gap:.6rem}
-.art .score .num{font-size:1.1rem}
-.art .row{font-size:.75rem;padding:.32rem 0}
-.art-bars{display:flex;align-items:flex-end;gap:.4rem;height:4.5rem;margin-top:.6rem;padding-top:.4rem;border-top:1px solid var(--line)}
-.art-bars i{flex:1;border-radius:4px 4px 1px 1px;background:#C9E6E2}
-.art-bars i.hi{background:var(--accent)}
-.art-flow{display:flex;align-items:center;gap:.6rem}
-.art-pdf{width:3.6rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.5rem;box-shadow:0 8px 18px -12px rgba(19,35,58,.3)}
-.art-pdf em{font:700 .55rem var(--head);font-style:normal;color:#B42318;background:#FEECEB;padding:.05rem .3rem;border-radius:3px}
-.art-pdf i{display:block;height:.28rem;background:#E3E8EE;border-radius:2px;margin-top:.32rem}
-.art-pdf i:nth-child(odd){width:70%}
-.art-arrow{width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex-shrink:0}
-.art-flow .art{width:9.5rem;padding:.6rem .7rem}
-.art-flow .row{font-size:.7rem;padding:.28rem 0}
-.art-ab{display:flex;align-items:flex-end;gap:1.4rem;height:5rem;justify-content:center;border-bottom:1.5px solid var(--line);margin-top:.4rem}
-.art-ab div{width:2.6rem;text-align:center}
-.art-ab b{display:block;font:800 .9rem var(--head);margin-bottom:.25rem}
-.art-ab i{display:block;border-radius:5px 5px 0 0;background:#D8DEE6}
-.art-ab .on b{color:var(--accent-ink)}.art-ab .on i{background:var(--accent)}
-.art-lbl{display:flex;justify-content:center;gap:1.4rem;margin-top:.3rem}
-.art-lbl span{width:2.6rem;text-align:center;font-size:.6875rem;color:var(--muted)}
-.art-icon{width:5.5rem;height:5.5rem;border-radius:24px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--accent);box-shadow:0 12px 28px -14px rgba(19,35,58,.3)}
 .art-live{position:absolute;top:1rem;right:1rem;display:inline-flex;align-items:center;gap:.4rem;font:700 .75rem var(--head);color:var(--accent-ink);background:#fff;border:1px solid var(--line);padding:.25rem .6rem;border-radius:999px}
 .art-live .dot{width:.45rem;height:.45rem;border-radius:50%;background:#16A34A;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
 
@@ -347,7 +325,7 @@ footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;j
         <button class="pc-btn prev" aria-label="Scroll left" disabled><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
         <div class="pc-track">
         <a class="pc-card" href="https://smart-reports-clone.vercel.app" target="_blank" rel="noopener" aria-label="AI Smart Reports for users: open live demo">
-          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art"><div class="t">Your Smart Report</div><div class="score"><svg width="40" height="40" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="#E7F4F2" stroke-width="9"/><circle cx="32" cy="32" r="26" fill="none" stroke="#0F766E" stroke-width="9" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40" transform="rotate(-90 32 32)"/></svg><div><small>Health Score</small><div class="num">Good</div></div></div><div class="row"><span>Biological Age</span><span class="pill low">Younger</span></div><div class="row"><span>Diabetes risk</span><span class="pill mid">Watch</span></div></div></div></div>
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><img class="pc-shot" src="img/work-smart-report.jpg" alt="Smart Health Report: cover page with the report summary and phone screens" width="1000" height="514" loading="lazy" decoding="async"></div></div>
           <div class="pc-body">
             <div>
               <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>AI product, built 0 to 1</span></div>
@@ -361,7 +339,7 @@ footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;j
           </div>
         </a>
         <a class="pc-card" href="https://corporate-dashboard-clone.vercel.app" target="_blank" rel="noopener" aria-label="AI Smart Reports for corporates: open live demo">
-          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art"><div class="t">Workforce health overview</div><div class="art-bars"><i style="height:45%"></i><i style="height:72%"></i><i class="hi" style="height:95%"></i><i style="height:58%"></i><i style="height:38%"></i><i style="height:66%"></i></div></div></div></div>
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><img class="pc-shot" src="img/work-corporate-dashboard.jpg" alt="Corporate Health Dashboard: company health quotient, health check funnel and age mix" width="1000" height="510" loading="lazy" decoding="async"></div></div>
           <div class="pc-body">
             <div>
               <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>B2B</span></div>
@@ -375,7 +353,7 @@ footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;j
           </div>
         </a>
         <a class="pc-card" href="YOUR-DIGITISATION-LINK" target="_blank" rel="noopener" aria-label="Lab report digitisation platform: open live demo">
-          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art-flow"><div class="art-pdf"><em>PDF</em><i></i><i></i><i></i><i></i><i></i></div><div class="art-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="art"><div class="row" style="border-top:0"><span>HbA1c</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div><div class="row"><span>LDL</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div><div class="row"><span>Vitamin D</span><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></div></div></div></div></div>
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><img class="pc-shot" src="img/work-lab-digitizer.jpg" alt="Lab Digitizer admin dashboard: reports processed, accuracy rate and activity trend" width="1000" height="512" loading="lazy" decoding="async"></div></div>
           <div class="pc-body">
             <div>
               <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>AI, vision-language model</span></div>
@@ -389,7 +367,7 @@ footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;j
           </div>
         </a>
         <a class="pc-card" href="https://my-benefits.vercel.app/" target="_blank" rel="noopener" aria-label="Benefits Hub: open live demo">
-          <div class="pc-media" aria-hidden="true"><div class="pc-art"><div class="art" style="width:11rem"><div class="t">Benefit booking rate</div><div class="art-ab"><div><b>21%</b><i style="height:1.9rem"></i></div><div class="on"><b>37%</b><i style="height:3.35rem"></i></div></div><div class="art-lbl"><span>Before</span><span>After</span></div></div></div></div>
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><img class="pc-shot tall" src="img/work-benefits-app.jpg" alt="Benefits app on a phone: corporate-sponsored benefits and quick links" width="480" height="947" loading="lazy" decoding="async"></div></div>
           <div class="pc-body">
             <div>
               <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>Growth, A/B testing</span></div>
@@ -403,7 +381,7 @@ footer .container{border-top:1px solid #2A3A52;padding-top:1.5rem;display:flex;j
           </div>
         </a>
         <a class="pc-card" href="https://gymdemo-beryl-seven.vercel.app/" target="_blank" rel="noopener" aria-label="Gym app: open the app">
-          <div class="pc-media" aria-hidden="true"><div class="pc-art"><span class="art-live"><span class="dot"></span>Live</span><div class="art-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></div></div></div>
+          <div class="pc-media" aria-hidden="true"><div class="pc-art"><span class="art-live"><span class="dot"></span>Live</span><img class="pc-shot" src="img/work-gym-finder.jpg" alt="Gym finder web app: search for partner gyms by city or pincode" width="1000" height="512" loading="lazy" decoding="async"></div></div>
           <div class="pc-body">
             <div>
               <div class="pc-tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg><span>Live in production</span></div>
